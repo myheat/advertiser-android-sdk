@@ -14,10 +14,11 @@ b)	调用GoCPA的Pixel传递信息以及业务参数<br />
 集成到你的项目，需要拷贝GocpaConfig.java,GocpaTracker.java和GocpaUtil.java到你的项目中<br />
 
 在AndroidManifest.xml里面填入参数：
+```xml
     <meta-data android:name="appId" android:value="app123" /> <br />
  		<meta-data android:name="referral" android:value="true" /> <br />
  		<meta-data android:name="advertiserId" android:value="\ 999" /> <br />
- 		
+``` 		
 其中，advertiserId在需要前面加入\空格
 
 调用方法
