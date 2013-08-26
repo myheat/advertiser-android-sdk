@@ -15,9 +15,9 @@ b)	调用GoCPA的Pixel传递信息以及业务参数<br />
 
 在AndroidManifest.xml里面填入参数：
 ```xml
-    <meta-data android:name="appId" android:value="app123" /> <br />
- 		<meta-data android:name="referral" android:value="true" /> <br />
- 		<meta-data android:name="advertiserId" android:value="\ 999" /> <br />
+    <meta-data android:name="appId" android:value="app123" /> 
+ 		<meta-data android:name="referral" android:value="true" /> 
+ 		<meta-data android:name="advertiserId" android:value="\ 999" /> 
 ``` 		
 其中，advertiserId在需要前面加入\空格
 
