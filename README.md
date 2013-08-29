@@ -11,11 +11,15 @@ b)	调用GoCPA的Pixel传递信息以及业务参数<br />
 
 如何开始
 -----------------------------------  
-集成到你的项目，需要拷贝GocpaConfig.java,GocpaTracker.java和GocpaUtil.java到你的项目中<br />
+集成到你的项目，需要拷贝
+GocpaConfig.java<br />
+GocpaTracker.java<br />
+GocpaUtil.java<br />
+到你的项目中<br />
 
 在AndroidManifest.xml里面application标签内填入参数：
 ```xml
-       <application
+<application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -25,16 +29,16 @@ b)	调用GoCPA的Pixel传递信息以及业务参数<br />
  	<meta-data android:name="referral" android:value="true" /> 
  	<meta-data android:name="advertiserId" android:value="\ 999" /> 
  	
- 	</application>
+ </application>
 ``` 		
 其中，appId和advertiserId在需要前面加入\空格,避免数字类型解析出错
 
 所需权限
 ------------------------
 ```xml
-   <uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ``` 	
 调用方法
 -----------------------------------  
