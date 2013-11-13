@@ -54,6 +54,17 @@ import com.gocpa.android.sdk.GocpaTracker;
 
 ```
 
+ReportEvent方法
+----------------------------------- 
+reportEvent(String event)<br />
+reportEvent(String event,float amount,String currency)<br />
+例如：<br />
+```java
+
+GocpaTracker.getInstance(MainActivity.this).reportEvent("event_name");
+
+```
+
 修改Pixel url
 ------------------------------------
 Pixel url由GoCPA提供，配置在GocpaConfig.java文件中，如需要，开发者可修改配置文件来修改Pixel URL。
