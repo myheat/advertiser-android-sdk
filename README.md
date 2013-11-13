@@ -56,6 +56,7 @@ import com.gocpa.android.sdk.GocpaTracker;
 
 ReportEvent方法
 ----------------------------------- 
+app内监测用户行为的方法（游戏关卡通关、内购等）<br />
 reportEvent(String event)<br />
 reportEvent(String event,float amount,String currency)<br />
 例如：<br />
