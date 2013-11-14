@@ -1,23 +1,23 @@
 advertiser-android-sdk
 ======================
-a)	根据用户终端收集信息（advertisingId，wifi mac）<br />
-b)	调用GoCPA的Pixel传递信息以及业务参数<br />
+a)	SDK for collecting devices' infomation（advertisingId，wifi mac）<br />
+b)	send infomation to GoCPA<br />
 
-**App开发者需传入三个参数：appId、advertiserId和referral。**<br />
-**appId为长度不超过36的字符串（String）;**<br />
-**advertiserId为长整型（long）；**<br />
-**referral为布尔值（bool）。**<br />
-这三个参数由GoCPA系统分配给app开发者。<br />
+**Developers need three arguments：appId、advertiserId and referral。 you can apply from GoCPA**<br />
+**appId String type, and length less than 32 （String）;**<br />
+**advertiserId long type（long）；**<br />
+**referral bool type（bool）。**<br />
+GoCPA distribute to app developers<br />
 
-如何开始
+How to start
 -----------------------------------  
-集成到你的项目，需要拷贝
+copy these three files
 GocpaConfig.java<br />
 GocpaTracker.java<br />
 GocpaUtil.java<br />
-到你的项目中<br />
+into your project<br />
 
-在AndroidManifest.xml里面application标签内填入参数：
+modify AndroidManifest.xml file in application tag：
 ```xml
 <application
         android:allowBackup="true"
@@ -31,45 +31,47 @@ GocpaUtil.java<br />
  	
  </application>
 ``` 		
-其中，appId和advertiserId在需要前面加入\空格,避免数字类型解析出错
+important: appId and advertiserId need \ and Blank Character in front,to tell system it's a number.
 
-所需权限
+android Permission
 ------------------------
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ``` 	
-调用方法
+
+ReportDevice
 -----------------------------------  
-引入头文件
+import sdk class on top of your class
+
 ```java
 import com.gocpa.android.sdk.GocpaTracker;
 
 ```
-初始化GocpaTracker对象<br />
-初始化之后，执行reportDevice方法即可提交用户终端设备信息。
+init GocpaTracker object <br />
+after that, call reportDevice method to sumbit device's infomation.
 ```java
     GocpaTracker.getInstance(MainActivity.this).reportDevice();
 
 ```
 
-ReportEvent方法
+ReportEvent
 ----------------------------------- 
-app内监测用户行为的方法（游戏关卡通关、内购等）<br />
+monitoring users' behaviors（passing a game level、IAP acting etc.）<br />
 reportEvent(String event)<br />
 reportEvent(String event,float amount,String currency)<br />
-例如：<br />
+<br />
 ```java
 
 GocpaTracker.getInstance(MainActivity.this).reportEvent("event_name");
 
 ```
 
-修改Pixel url
-------------------------------------
-Pixel url由GoCPA提供，配置在GocpaConfig.java文件中，如需要，开发者可修改配置文件来修改Pixel URL。
 
+Pixel url
+------------------------------------
+Pixel url assigned by GoCPA, you can modify it in GocpaConfig.java if needed.
 ```java
 public static String PixelHost ="http://pixel.gocpa.com/Pixel";
 
