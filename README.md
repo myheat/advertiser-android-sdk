@@ -58,7 +58,7 @@ after that, call reportDevice method to sumbit device's infomation.
 
 ReportEvent
 ----------------------------------- 
-monitoring users' behaviors（passing a game level、IAP acting etc.）<br />
+monitoring users' behaviors（passing a game level、buying acting etc.）<br />
 reportEvent(String event)<br />
 reportEvent(String event,float amount,String currency)<br />
 <br />
