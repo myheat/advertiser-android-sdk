@@ -3,7 +3,6 @@ package com.gocpa.android.sdk;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.List;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -12,8 +11,7 @@ import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.protocol.ClientContext;
-import org.apache.http.cookie.Cookie;
-import org.apache.http.impl.client.BasicCookieStore;
+
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
