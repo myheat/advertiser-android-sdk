@@ -30,6 +30,18 @@ public class GocpaUtil {
 		} 
 		return id;
 	}
+	public static String getAndroidBrand() {
+		return android.os.Build.BRAND;
+		
+	}
+	public static String getAndroidModel() {
+		return android.os.Build.MODEL;
+		
+	}
+	public static String getAndroidVersion() {
+		return android.os.Build.VERSION.RELEASE;
+		
+	}
 	public static String loadFileAsString(String filePath){
 		StringBuffer fileData = new StringBuffer();
 		try{
@@ -55,6 +67,31 @@ public class GocpaUtil {
        }else{
     	   return "";
        }
+    }
+	
+	public static String getOperator(Context context) {
+        TelephonyManager manager = 
+            (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
+       
+        String operator = manager.getSimOperator();
+        if(operator!=null){ 
+        	if(operator.equals("46000") || operator.equals("46002")|| operator.equals("46007")){
+
+        	 return "中国移动";
+        	 
+
+        	}else if(operator.equals("46001")){
+
+        		return "中国联通";
+
+        	}else if(operator.equals("46003")){
+
+        		return "中国电信";
+
+        	} 
+       }
+       return "未知";
+        
     }
 	
 	public static String getMEID(Context context) {

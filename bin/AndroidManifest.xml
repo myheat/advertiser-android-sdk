@@ -25,8 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data android:name="appId" android:value="app123" /> 
- 		<meta-data android:name="referral" android:value="true" /> 
+        <meta-data android:name="appId" android:value="\ app123" /> 
+ 		<meta-data android:name="referral" android:value="false" /> 
  		<meta-data android:name="advertiserId" android:value="\ 999" /> 
     </application>
 

@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 	private OnClickListener onClickListener = new OnClickListener(){
 		@Override
 		public void onClick(View v) {
-			GocpaTracker.getInstance(MainActivity.this).reportDevice();
+			GocpaTracker.getInstance(MainActivity.this).reportEvent("event");
 			//Toast.makeText(MainActivity.this, GocpaTracker.getInstance(MainActivity.this).reportDevice(), Toast.LENGTH_SHORT).show();
 		}
 	};
