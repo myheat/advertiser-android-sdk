@@ -76,21 +76,14 @@ public class GocpaUtil {
         String operator = manager.getSimOperator();
         if(operator!=null){ 
         	if(operator.equals("46000") || operator.equals("46002")|| operator.equals("46007")){
-
-        	 return "中国移动";
-        	 
-
+        		return "ChinaMobile";
         	}else if(operator.equals("46001")){
-
-        		return "中国联通";
-
+        		return "ChinaUnicom";
         	}else if(operator.equals("46003")){
-
-        		return "中国电信";
-
+        		return "ChinaTelecom";
         	} 
        }
-       return "未知";
+       return "Unknown";
         
     }
 	
