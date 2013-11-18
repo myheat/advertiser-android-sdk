@@ -56,7 +56,7 @@ public class GocpaTracker {
             	 
             	 String deviceId = "meid="+meid + "&imei="+imei+"&serialId="+serialId + "&wifimac="+wifimac
             	 	+"&deviceBrand="+deviceBrand + "&deviceModel="+deviceModel + "&OSVersion="+OSVersion
-            	 	+"&Operator="+Operator+"&event="+event + "&amount="+amount + "&currency="+currency;
+            	 	+"&Operator="+Operator;
             	 try {
 					deviceId = URLEncoder.encode(deviceId,"utf-8");
 					
@@ -64,7 +64,8 @@ public class GocpaTracker {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-            	 String httpUrl = GocpaConfig.PixelHost+"?appId="+appId+"&advertiserId="+advertiserId+"&referral="+referral+"&deviceId="+deviceId;
+            	 String httpUrl = GocpaConfig.PixelHost+"?appId="+appId+"&advertiserId="+advertiserId+"&referral="
+            	 +referral+"&deviceId="+deviceId+"&event="+event + "&amount="+amount + "&currency="+currency;
             	 HttpGet request = new HttpGet(httpUrl);
                  
                  
