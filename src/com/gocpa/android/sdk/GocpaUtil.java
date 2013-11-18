@@ -74,7 +74,7 @@ public class GocpaUtil {
             (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
        
         String operator = manager.getSimOperator();
-        if(operator!=null){ 
+        /*if(operator!=null){ 
         	if(operator.equals("46000") || operator.equals("46002")|| operator.equals("46007")){
         		return "ChinaMobile";
         	}else if(operator.equals("46001")){
@@ -83,7 +83,8 @@ public class GocpaUtil {
         		return "ChinaTelecom";
         	} 
        }
-       return "Unknown";
+       return "Unknown";*/
+        return operator;
         
     }
 	
