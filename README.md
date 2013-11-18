@@ -11,7 +11,7 @@ GoCPA distribute to app developers<br />
 
 How to start
 -----------------------------------  
-copy these three files
+copy these files following<br />
 GocpaConfig.java<br />
 GocpaTracker.java<br />
 GocpaUtil.java<br />
