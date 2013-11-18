@@ -15,6 +15,7 @@ copy these three files
 GocpaConfig.java<br />
 GocpaTracker.java<br />
 GocpaUtil.java<br />
+PersistentCookieStore.java<br />
 into your project<br />
 
 modify AndroidManifest.xml file in application tag：
