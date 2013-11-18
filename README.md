@@ -12,10 +12,10 @@ GoCPA distribute to app developers<br />
 How to start
 -----------------------------------  
 copy these files following<br />
-GocpaConfig.java<br />
-GocpaTracker.java<br />
-GocpaUtil.java<br />
-PersistentCookieStore.java<br />
+**GocpaConfig.java**<br />
+**GocpaTracker.java**<br />
+**GocpaUtil.java**<br />
+**PersistentCookieStore.java**<br />
 into your project<br />
 
 modify AndroidManifest.xml file in application tag：
