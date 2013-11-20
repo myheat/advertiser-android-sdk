@@ -131,9 +131,13 @@ public class GocpaTracker {
                  System.out.println(httpUrl);
             	 HttpGet request = new HttpGet(httpUrl);
                  HttpClient httpClient = new DefaultHttpClient();
-                 
+            	 CookieStore cookieStore = new PersistentCookieStore(mContext);
+                 // Create local HTTP context
+                 HttpContext localContext = new BasicHttpContext();
+                 // Bind custom cookie store to the local context
+                 localContext.setAttribute(ClientContext.COOKIE_STORE, cookieStore);
                  try {
-                     HttpResponse response = httpClient.execute(request);
+                     HttpResponse response = httpClient.execute(request,localContext);
                      if(response.getStatusLine().getStatusCode()==HttpStatus.SC_OK){
                          //String str = EntityUtils.toString(response.getEntity());
                          
