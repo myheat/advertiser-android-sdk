@@ -58,6 +58,10 @@ public class GocpaTracker {
             	 	+"&deviceBrand="+deviceBrand + "&deviceModel="+deviceModel + "&OSVersion="+OSVersion
             	 	+"&Operator="+Operator;
             	 try {
+            		 appId = URLEncoder.encode(appId,"utf-8");
+            		 advertiserId = URLEncoder.encode(advertiserId,"utf-8");
+
+            		 
 					deviceId = URLEncoder.encode(deviceId,"utf-8");
 					
 				} catch (UnsupportedEncodingException e1) {
@@ -122,6 +126,8 @@ public class GocpaTracker {
          	 	+"&Operator="+Operator;
             	 
             	 try {
+            		 appId = URLEncoder.encode(appId,"utf-8");
+            		 advertiserId = URLEncoder.encode(advertiserId,"utf-8");
 					deviceId = URLEncoder.encode(deviceId,"utf-8");
 				} catch (UnsupportedEncodingException e1) {
 					// TODO Auto-generated catch block
