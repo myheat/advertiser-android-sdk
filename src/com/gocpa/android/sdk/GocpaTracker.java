@@ -53,14 +53,14 @@ public class GocpaTracker {
             	 String serialId = GocpaUtil.getAndroidID(mContext);
             	 String imei = GocpaUtil.getIMEI(mContext);
             	 String meid = GocpaUtil.getMEID(mContext);
-            	 
+            	 String event_encoded =event;
             	 String deviceId = "meid="+meid + "&imei="+imei+"&serialId="+serialId + "&wifimac="+wifimac
             	 	+"&deviceBrand="+deviceBrand + "&deviceModel="+deviceModel + "&OSVersion="+OSVersion
             	 	+"&Operator="+Operator;
             	 try {
             		 appId = URLEncoder.encode(appId,"utf-8");
             		 advertiserId = URLEncoder.encode(advertiserId,"utf-8");
-
+            		 event_encoded = URLEncoder.encode(event,"utf-8");
             		 
 					deviceId = URLEncoder.encode(deviceId,"utf-8");
 					
@@ -69,7 +69,7 @@ public class GocpaTracker {
 					e1.printStackTrace();
 				}
             	 String httpUrl = GocpaConfig.PixelHost+"?appId="+appId+"&advertiserId="+advertiserId+"&referral="
-            	 +referral+"&deviceId="+deviceId+"&event="+event + "&amount="+amount + "&currency="+currency;
+            	 +referral+"&deviceId="+deviceId+"&event="+event_encoded + "&amount="+amount + "&currency="+currency;
             	 HttpGet request = new HttpGet(httpUrl);
                  
                  
