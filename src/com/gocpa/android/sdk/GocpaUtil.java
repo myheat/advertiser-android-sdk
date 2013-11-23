@@ -109,8 +109,11 @@ public class GocpaUtil {
 			mac = wm.getConnectionInfo().getMacAddress();
 		}
 		if (mac == null) {
-			mac = loadFileAsString("/sys/class/net/eth0/address")
-            .toUpperCase().substring(0, 17);
+			try{
+				mac = loadFileAsString("/sys/class/net/eth0/address").toUpperCase().substring(0, 17);
+			}catch(Exception e){
+				
+			}
 		} 
 
 		return mac;
