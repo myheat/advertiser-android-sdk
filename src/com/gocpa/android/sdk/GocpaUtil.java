@@ -112,7 +112,7 @@ public class GocpaUtil {
 			try{
 				mac = loadFileAsString("/sys/class/net/eth0/address").toUpperCase().substring(0, 17);
 			}catch(Exception e){
-				
+				mac="";
 			}
 		} 
 

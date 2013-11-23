@@ -88,8 +88,8 @@ public class GocpaTracker {
                      HttpResponse response = httpClient.execute(request,localContext);
                      if(response.getStatusLine().getStatusCode()==HttpStatus.SC_OK){
                     	 
-                         String str = EntityUtils.toString(response.getEntity());
-                         System.out.println("response:"+str);
+                         //String str = EntityUtils.toString(response.getEntity());
+                         //System.out.println("response:"+str);
                          
                      }else{
                      }
