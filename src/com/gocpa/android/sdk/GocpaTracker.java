@@ -11,8 +11,14 @@ import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.protocol.ClientContext;
+import org.apache.http.conn.ClientConnectionManager;
+import org.apache.http.conn.scheme.PlainSocketFactory;
+import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeRegistry;
 
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
+import org.apache.http.params.BasicHttpParams;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
@@ -22,18 +28,31 @@ import android.content.Context;
 public class GocpaTracker {
 	private static GocpaTracker mInstance;
 	private Context mContext;
+	private static HttpClient httpClient;
 	public static GocpaTracker getInstance(final Context context) {
         if (mInstance == null) {
             mInstance = new GocpaTracker();
         }
         mInstance.startNewSession(context);
+        
+        BasicHttpParams params = new BasicHttpParams();
+    	SchemeRegistry schemeRegistry = new SchemeRegistry();
+    	schemeRegistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
+    	ClientConnectionManager cm = new ThreadSafeClientConnManager(params, schemeRegistry);
+    	httpClient = new DefaultHttpClient(cm,params);
+    	
         return mInstance;
     }
 	public void startNewSession(final Context context) {
         mContext = context.getApplicationContext();
 
     }
-	HttpClient httpClient = new DefaultHttpClient();
+	
+	
+	
+
+	
+	
 	public void reportEvent(String event){
 		reportEvent(event,0,"");
 	}
@@ -134,7 +153,7 @@ public class GocpaTracker {
 					e1.printStackTrace();
 				}
             	 String httpUrl = GocpaConfig.PixelHost+"?appId="+appId+"&advertiserId="+advertiserId+"&referral="+referral+"&deviceId="+deviceId;
-                 System.out.println(httpUrl);
+                 //System.out.println(httpUrl);
             	 HttpGet request = new HttpGet(httpUrl);
                  HttpClient httpClient = new DefaultHttpClient();
             	 CookieStore cookieStore = new PersistentCookieStore(mContext);
