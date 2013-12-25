@@ -30,16 +30,18 @@ public class GocpaTracker {
 	private Context mContext;
 	private static HttpClient httpClient;
 	public static GocpaTracker getInstance(final Context context) {
-        if (mInstance == null) {
-            mInstance = new GocpaTracker();
-        }
-        mInstance.startNewSession(context);
-        
         BasicHttpParams params = new BasicHttpParams();
     	SchemeRegistry schemeRegistry = new SchemeRegistry();
     	schemeRegistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
     	ClientConnectionManager cm = new ThreadSafeClientConnManager(params, schemeRegistry);
     	httpClient = new DefaultHttpClient(cm,params);
+    	
+        if (mInstance == null) {
+            mInstance = new GocpaTracker();
+        }
+        mInstance.startNewSession(context);
+        
+
     	
         return mInstance;
     }
