@@ -29,19 +29,19 @@ public class GocpaTracker {
 	private static GocpaTracker mInstance;
 	private Context mContext;
 	private static HttpClient httpClient;
-	public static GocpaTracker getInstance(final Context context) {
+	private GocpaTracker(){
         BasicHttpParams params = new BasicHttpParams();
     	SchemeRegistry schemeRegistry = new SchemeRegistry();
     	schemeRegistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
     	ClientConnectionManager cm = new ThreadSafeClientConnManager(params, schemeRegistry);
     	httpClient = new DefaultHttpClient(cm,params);
-    	
+	}
+	public static GocpaTracker getInstance(final Context context) {
         if (mInstance == null) {
             mInstance = new GocpaTracker();
         }
         mInstance.startNewSession(context);
         
-
     	
         return mInstance;
     }
@@ -104,7 +104,6 @@ public class GocpaTracker {
                      System.out.println("Local cookie: " + cookies.get(i));
                  }*/
             	 //cookieStore.clear();
-                
                  try {
                      HttpResponse response = httpClient.execute(request,localContext);
                      if(response.getStatusLine().getStatusCode()==HttpStatus.SC_OK){
