@@ -155,7 +155,7 @@ public class GocpaTracker {
             	 String httpUrl = GocpaConfig.PixelHost+"?appId="+appId+"&advertiserId="+advertiserId+"&referral="+referral+"&deviceId="+deviceId;
                  //System.out.println(httpUrl);
             	 HttpGet request = new HttpGet(httpUrl);
-                 HttpClient httpClient = new DefaultHttpClient();
+                 //HttpClient httpClient = new DefaultHttpClient();
             	 CookieStore cookieStore = new PersistentCookieStore(mContext);
                  // Create local HTTP context
                  HttpContext localContext = new BasicHttpContext();
