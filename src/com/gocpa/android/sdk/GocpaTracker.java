@@ -49,12 +49,7 @@ public class GocpaTracker {
         mContext = context.getApplicationContext();
 
     }
-	
-	
-	
 
-	
-	
 	public void reportEvent(String event){
 		reportEvent(event,0,"");
 	}
